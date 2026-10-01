@@ -1,0 +1,1278 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lolo Tinambun — Graduation 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111;
+            color: #f3eee6;
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* =====================================
+           LOADING
+        ===================================== */
+
+        .loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 1s ease;
+        }
+
+        .loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-small {
+            font-size: 8px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            opacity: .45;
+            margin-bottom: 18px;
+        }
+
+        .loader-name {
+            font-family: "Playfair Display", serif;
+            font-size: 45px;
+            font-style: italic;
+        }
+
+        .loader-line {
+            width: 0;
+            height: 1px;
+            background: #eee;
+            margin: 20px auto 0;
+            animation: line 1.4s forwards;
+        }
+
+        @keyframes line {
+            to {
+                width: 100px;
+            }
+        }
+
+
+        /* =====================================
+           WATERMARK
+        ===================================== */
+
+        .watermark {
+            position: fixed;
+            z-index: 100;
+            right: 18px;
+            bottom: 16px;
+
+            font-size: 7px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #fff;
+            opacity: .28;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================
+           GENERAL
+        ===================================== */
+
+        .section {
+            position: relative;
+            padding: 90px 22px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .eyebrow {
+            font-size: 8px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: .45;
+        }
+
+        .serif {
+            font-family: "Playfair Display", serif;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition:
+                opacity .9s ease,
+                transform .9s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .hero {
+            min-height: 100svh;
+            position: relative;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 50px 24px 55px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,.05),
+                    rgba(0,0,0,.92)
+                ),
+                radial-gradient(
+                    circle at 75% 25%,
+                    #57524a,
+                    #252421 48%,
+                    #111 80%
+                );
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    115deg,
+                    transparent 30%,
+                    rgba(255,255,255,.035),
+                    transparent 70%
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-top {
+            margin-bottom: 80px;
+        }
+
+        .hero-top span {
+            display: block;
+            font-size: 8px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: .45;
+        }
+
+        .hero-name {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                42px,
+                12vw,
+                105px
+            );
+
+            font-weight: 400;
+
+            line-height: .95;
+
+            letter-spacing: -2px;
+        }
+
+        .hero-degree {
+            font-family: "Playfair Display", serif;
+
+            font-size: 17px;
+
+            margin-top: 18px;
+
+            opacity: .7;
+        }
+
+        .hero-prodi {
+            margin-top: 6px;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: .45;
+        }
+
+        .hero-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .hero-bottom-left {
+            font-size: 8px;
+            line-height: 1.8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: .45;
+        }
+
+        .scroll {
+            font-size: 8px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: .4;
+            writing-mode: vertical-rl;
+        }
+
+
+        /* =====================================
+           SECTION 01
+        ===================================== */
+
+        .intro {
+            background: #e9e3d9;
+            color: #171614;
+        }
+
+        .intro-heading {
+            margin-top: 25px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                38px,
+                10vw,
+                75px
+            );
+
+            line-height: 1.05;
+        }
+
+        .intro-text {
+            max-width: 570px;
+
+            margin-top: 25px;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+            font-weight: 300;
+        }
+
+        .photo-one {
+            height: 115vw;
+            max-height: 700px;
+
+            margin-top: 45px;
+
+            overflow: hidden;
+        }
+
+        .photo-caption {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 10px;
+
+            font-size: 7px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: .4;
+        }
+
+
+        /* =====================================
+           INVITATION
+        ===================================== */
+
+        .invitation {
+            background: #171716;
+            color: #f3eee6;
+            text-align: center;
+        }
+
+        .invite-title {
+            margin-top: 24px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                48px,
+                13vw,
+                105px
+            );
+
+            line-height: .9;
+        }
+
+        .invite-text {
+            max-width: 500px;
+
+            margin: 30px auto 0;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            font-weight: 300;
+
+            opacity: .65;
+        }
+
+        .date-box {
+            margin-top: 55px;
+
+            padding: 35px 15px;
+
+            border-top: 1px solid rgba(255,255,255,.14);
+
+            border-bottom: 1px solid rgba(255,255,255,.14);
+        }
+
+        .date-day {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                90px,
+                25vw,
+                180px
+            );
+
+            line-height: .75;
+        }
+
+        .date-month {
+            margin-top: 25px;
+
+            font-size: 10px;
+
+            letter-spacing: 6px;
+
+            text-transform: uppercase;
+
+            opacity: .55;
+        }
+
+        .event-info {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 40px;
+
+            margin-top: 45px;
+
+            flex-wrap: wrap;
+        }
+
+        .event-item span {
+            display: block;
+
+            font-size: 7px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: .4;
+
+            margin-bottom: 9px;
+        }
+
+        .event-item p {
+            font-size: 13px;
+        }
+
+
+        /* =====================================
+           PHOTO MOMENT
+        ===================================== */
+
+        .moment {
+            background: #c9bda9;
+            color: #171614;
+        }
+
+        .moment-title {
+            margin-top: 20px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                45px,
+                12vw,
+                100px
+            );
+
+            line-height: .9;
+        }
+
+        .moment-subtitle {
+            margin-top: 20px;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: .5;
+        }
+
+        .photo-grid {
+            margin-top: 55px;
+
+            display: grid;
+
+            gap: 18px;
+        }
+
+        .photo-two {
+            height: 105vw;
+            max-height: 650px;
+        }
+
+        .photo-three {
+            height: 78vw;
+            max-height: 500px;
+
+            margin-left: 15%;
+        }
+
+        .lolo-signature {
+            margin-top: 55px;
+        }
+
+        .lolo-signature-name {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                34px,
+                9vw,
+                65px
+            );
+        }
+
+        .lolo-signature-degree {
+            margin-top: 8px;
+
+            font-family: "Playfair Display", serif;
+
+            font-style: italic;
+
+            font-size: 18px;
+
+            opacity: .6;
+        }
+
+        .lolo-signature-prodi {
+            margin-top: 12px;
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: .45;
+        }
+
+
+        /* =====================================
+           FINAL PHOTO
+        ===================================== */
+
+        .final-photo {
+            background: #111;
+            padding-bottom: 100px;
+        }
+
+        .final-photo-heading {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                45px,
+                11vw,
+                90px
+            );
+
+            line-height: 1;
+
+            margin-top: 20px;
+        }
+
+        .photo-four {
+            height: 125vw;
+            max-height: 750px;
+
+            margin-top: 50px;
+        }
+
+        .final-quote {
+            max-width: 600px;
+
+            margin: 45px auto 0;
+
+            text-align: center;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                28px,
+                7vw,
+                50px
+            );
+
+            line-height: 1.2;
+        }
+
+
+        /* =====================================
+           THANK YOU
+        ===================================== */
+
+        .thankyou {
+            min-height: 80svh;
+
+            background: #111;
+
+            display: flex;
+
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .thankyou-content {
+            width: 100%;
+        }
+
+        .thankyou-title {
+            margin-top: 25px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                55px,
+                14vw,
+                130px
+            );
+
+            line-height: .85;
+        }
+
+        .thankyou-text {
+            max-width: 470px;
+
+            margin: 35px auto 0;
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+            opacity: .55;
+        }
+
+        .final-date {
+            margin-top: 55px;
+
+            font-size: 8px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            opacity: .4;
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer {
+            padding: 25px 22px;
+
+            background: #0b0b0b;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 7px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: .3;
+        }
+
+
+        /* =====================================
+           DESKTOP
+        ===================================== */
+
+        @media (min-width: 768px) {
+
+            .section {
+                padding: 130px 8vw;
+            }
+
+            .hero {
+                padding: 70px 8vw;
+            }
+
+            .hero-name {
+                font-size: 100px;
+            }
+
+            .intro-text {
+                font-size: 17px;
+            }
+
+            .photo-one {
+                height: 650px;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1.2fr .8fr;
+                align-items: end;
+            }
+
+            .photo-two {
+                height: 650px;
+            }
+
+            .photo-three {
+                height: 480px;
+                margin-left: 0;
+            }
+
+            .photo-four {
+                height: 700px;
+            }
+
+        }
+
+
+        /* =====================================
+           MOBILE SMALL
+        ===================================== */
+
+        @media (max-width: 380px) {
+
+            .hero-name {
+                font-size: 40px;
+            }
+
+            .section {
+                padding: 75px 20px;
+            }
+
+            .date-day {
+                font-size: 85px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- LOADING -->
+
+    <div class="loader">
+
+        <div class="loader-content">
+
+            <div class="loader-small">
+                Graduation Invitation
+            </div>
+
+            <div class="loader-name">
+                Lolo
+            </div>
+
+            <div class="loader-line"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WATERMARK -->
+
+    <div class="watermark">
+        svngsh
+    </div>
+
+
+    <!-- =====================================
+         HERO
+    ===================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-top">
+
+                <span>
+                    Graduation · 2026
+                </span>
+
+            </div>
+
+
+            <div class="hero-name">
+
+                Lolo Tinambun, A.Md.A.B.
+
+            </div>
+
+
+            <div class="hero-prodi">
+
+                Administrasi Bisnis
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+                <div class="hero-bottom-left">
+
+                    A day to celebrate
+                    <br>
+                    A moment to remember
+
+                </div>
+
+
+                <div class="scroll">
+
+                    Scroll
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FOTO 1 + CERITA
+    ===================================== -->
+
+    <section class="section intro">
+
+        <div class="container">
+
+
+            <div class="eyebrow reveal">
+
+                A DAY WORTH REMEMBERING
+
+            </div>
+
+
+            <h2 class="intro-heading reveal">
+
+                A moment
+                <br>
+                made
+                <span class="italic">
+                    special.
+                </span>
+
+            </h2>
+
+
+            <p class="intro-text reveal">
+
+                Ada momen yang datang setelah
+                perjalanan panjang. Bukan sekadar
+                tentang sebuah gelar, tetapi tentang
+                satu pencapaian yang akhirnya layak
+                dirayakan bersama.
+
+            </p>
+
+
+            <div class="photo-one reveal">
+
+                <img
+                    src="lolo 1.jpeg"
+                    alt="Lolo Tinambun"
+                >
+
+            </div>
+
+
+            <div class="photo-caption">
+
+                <span>
+                    Lolo Tinambun
+                </span>
+
+                <span>
+                    01 / 04
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         INVITATION
+    ===================================== -->
+
+    <section class="section invitation">
+
+        <div class="container">
+
+
+            <div class="eyebrow reveal">
+
+                YOU ARE INVITED
+
+            </div>
+
+
+            <h2 class="invite-title reveal">
+
+                Come &
+                <br>
+                celebrate.
+
+            </h2>
+
+
+            <p class="invite-text reveal">
+
+                Dengan penuh sukacita,
+                mengundang teman-teman untuk hadir
+                dan menjadi bagian dari momen
+                kelulusannya.
+
+            </p>
+
+
+            <div class="date-box reveal">
+
+                <div class="date-day">
+                    07
+                </div>
+
+
+                <div class="date-month">
+
+                    October · 2026
+
+                </div>
+
+
+                <div class="event-info">
+
+
+                    <div class="event-item">
+
+                        <span>
+                            Time
+                        </span>
+
+                        <p>
+                            17.00 WIB
+                        </p>
+
+                    </div>
+
+
+                    <div class="event-item">
+
+                        <span>
+                            Venue
+                        </span>
+
+                        <p>
+                            Auditorium USU
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         MOMENT / FOTO 2 & 3
+    ===================================== -->
+
+    <section class="section moment">
+
+        <div class="container">
+
+
+            <div class="eyebrow reveal">
+
+                A MOMENT TO BE PROUD OF
+
+            </div>
+
+
+            <h2 class="moment-title reveal">
+
+                The moment
+                <br>
+                <span class="italic">
+                    arrived.
+                </span>
+
+            </h2>
+
+
+            <div class="moment-subtitle reveal">
+
+                A.Md.A.B. · Administrasi Bisnis
+
+            </div>
+
+
+            <div class="photo-grid">
+
+
+                <div class="photo-two reveal">
+
+                    <img
+                        src="lolo 2.jpeg"
+                        alt="Lolo saat sidang"
+                    >
+
+                </div>
+
+
+                <div class="photo-three reveal">
+
+                    <img
+                        src="lolo 3.jpeg"
+                        alt="Lolo saat sidang"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="lolo-signature reveal">
+
+                <div class="lolo-signature-name">
+
+                    Lolo Tinambun
+
+                </div>
+
+
+                <div class="lolo-signature-degree">
+
+                    A.Md.A.B.
+
+                </div>
+
+
+                <div class="lolo-signature-prodi">
+
+                    Administrasi Bisnis · Class of 2026
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FOTO 4
+    ===================================== -->
+
+    <section class="section final-photo">
+
+        <div class="container">
+
+
+            <div class="eyebrow reveal">
+
+                ONE JOURNEY COMPLETED
+
+            </div>
+
+
+            <h2 class="final-photo-heading reveal">
+
+                And now,
+                <br>
+                <span class="italic">
+                    a new one.
+                </span>
+
+            </h2>
+
+
+            <div class="photo-four reveal">
+
+                <img
+                    src="lolo 4.jpeg"
+                    alt="Lolo Tinambun saat sidang"
+                >
+
+            </div>
+
+
+            <div class="photo-caption reveal">
+
+                <span>
+                    Lolo Tinambun
+                </span>
+
+                <span>
+                    04 / 04
+                </span>
+
+            </div>
+
+
+            <div class="final-quote reveal">
+
+                One journey completed.
+                <br>
+                A new one is about to begin.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         THANK YOU
+    ===================================== -->
+
+    <section class="section thankyou">
+
+        <div class="container thankyou-content">
+
+
+            <div class="eyebrow reveal">
+
+                THANK YOU
+
+            </div>
+
+
+            <h2 class="thankyou-title reveal">
+
+                See you
+                <br>
+                there.
+
+            </h2>
+
+
+            <p class="thankyou-text reveal">
+
+                Terima kasih telah menjadi bagian
+                dari perjalanan ini. Kehadiran dan
+                doa baik dari teman-teman akan
+                membuat momen ini semakin berarti.
+
+            </p>
+
+
+            <div class="final-date reveal">
+
+                07 · 10 · 2026
+                &nbsp; / &nbsp;
+                Auditorium USU
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>
+            Lolo Tinambun
+        </span>
+
+        <span>
+            Graduation 2026
+        </span>
+
+    </footer>
+
+
+
+    <script>
+
+
+        /* =====================================
+           LOADING
+        ===================================== */
+
+        window.addEventListener("load", function () {
+
+            setTimeout(function () {
+
+                document
+                    .querySelector(".loader")
+                    .classList
+                    .add("hide");
+
+            }, 1300);
+
+        });
+
+
+
+        /* =====================================
+           SCROLL REVEAL
+        ===================================== */
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target
+                                .classList
+                                .add("show");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach(function (element) {
+
+                observer.observe(element);
+
+            });
+
+
+    </script>
+
+
+</body>
+
+</html>
+```
