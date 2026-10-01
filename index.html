@@ -39,20 +39,16 @@
         }
 
 
-        /* ==============================
-           LOADING
-        ============================== */
+        /* LOADING */
 
         .loader {
             position: fixed;
             inset: 0;
             z-index: 9999;
             background: #111;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             transition: 1s ease;
         }
 
@@ -84,7 +80,6 @@
             height: 1px;
             background: #eee;
             margin: 20px auto 0;
-
             animation: line 1.4s forwards;
         }
 
@@ -95,31 +90,23 @@
         }
 
 
-        /* ==============================
-           WATERMARK
-        ============================== */
+        /* WATERMARK */
 
         .watermark {
             position: fixed;
             z-index: 100;
-
             right: 18px;
             bottom: 16px;
-
             font-size: 7px;
             letter-spacing: 3px;
             text-transform: uppercase;
-
             color: #fff;
             opacity: .28;
-
             pointer-events: none;
         }
 
 
-        /* ==============================
-           GENERAL
-        ============================== */
+        /* GENERAL */
 
         .section {
             position: relative;
@@ -146,7 +133,6 @@
         .reveal {
             opacity: 0;
             transform: translateY(28px);
-
             transition:
                 opacity .9s ease,
                 transform .9s ease;
@@ -158,20 +144,14 @@
         }
 
 
-        /* ==============================
-           HERO
-        ============================== */
+        /* HERO */
 
         .hero {
             min-height: 100svh;
-
             position: relative;
-
             display: flex;
             align-items: flex-end;
-
             padding: 50px 24px 55px;
-
             overflow: hidden;
 
             background:
@@ -190,7 +170,6 @@
 
         .hero::before {
             content: "";
-
             position: absolute;
             inset: 0;
 
@@ -206,7 +185,6 @@
         .hero-content {
             position: relative;
             z-index: 2;
-
             width: 100%;
         }
 
@@ -216,11 +194,9 @@
 
         .hero-top span {
             display: block;
-
             font-size: 8px;
             letter-spacing: 4px;
             text-transform: uppercase;
-
             opacity: .45;
         }
 
@@ -234,59 +210,43 @@
             );
 
             font-weight: 400;
-
             line-height: .95;
-
             letter-spacing: -2px;
         }
 
         .hero-prodi {
             margin-top: 10px;
-
             font-size: 9px;
             letter-spacing: 3px;
             text-transform: uppercase;
-
             opacity: .45;
         }
 
         .hero-bottom {
             display: flex;
-
             justify-content: space-between;
             align-items: flex-end;
-
             margin-top: 45px;
         }
 
         .hero-bottom-left {
             font-size: 8px;
-
             line-height: 1.8;
-
             letter-spacing: 2px;
-
             text-transform: uppercase;
-
             opacity: .45;
         }
 
         .scroll {
             font-size: 8px;
-
             letter-spacing: 3px;
-
             text-transform: uppercase;
-
             opacity: .4;
-
             writing-mode: vertical-rl;
         }
 
 
-        /* ==============================
-           INTRO
-        ============================== */
+        /* INTRO */
 
         .intro {
             background: #e9e3d9;
@@ -309,52 +269,35 @@
 
         .intro-text {
             max-width: 570px;
-
             margin-top: 25px;
-
             font-size: 14px;
-
             line-height: 1.9;
-
             font-weight: 300;
         }
 
         .photo-one {
             height: 115vw;
-
             max-height: 700px;
-
             margin-top: 45px;
-
             overflow: hidden;
         }
 
         .photo-caption {
             display: flex;
-
             justify-content: space-between;
-
             margin-top: 10px;
-
             font-size: 7px;
-
             letter-spacing: 2px;
-
             text-transform: uppercase;
-
             opacity: .4;
         }
 
 
-        /* ==============================
-           INVITATION
-        ============================== */
+        /* INVITATION */
 
         .invitation {
             background: #171716;
-
             color: #f3eee6;
-
             text-align: center;
         }
 
@@ -374,25 +317,18 @@
 
         .invite-text {
             max-width: 500px;
-
             margin: 30px auto 0;
-
             font-size: 13px;
-
             line-height: 1.8;
-
             font-weight: 300;
-
             opacity: .65;
         }
 
         .date-box {
             margin-top: 55px;
-
             padding: 35px 15px;
 
             border-top: 1px solid rgba(255,255,255,.14);
-
             border-bottom: 1px solid rgba(255,255,255,.14);
         }
 
@@ -410,39 +346,26 @@
 
         .date-month {
             margin-top: 25px;
-
             font-size: 10px;
-
             letter-spacing: 6px;
-
             text-transform: uppercase;
-
             opacity: .55;
         }
 
         .event-info {
             display: flex;
-
             justify-content: center;
-
             gap: 40px;
-
             margin-top: 45px;
-
             flex-wrap: wrap;
         }
 
         .event-item span {
             display: block;
-
             font-size: 7px;
-
             letter-spacing: 3px;
-
             text-transform: uppercase;
-
             opacity: .4;
-
             margin-bottom: 9px;
         }
 
@@ -451,13 +374,10 @@
         }
 
 
-        /* ==============================
-           MOMENT
-        ============================== */
+        /* MOMENT */
 
         .moment {
             background: #c9bda9;
-
             color: #171614;
         }
 
@@ -477,35 +397,26 @@
 
         .moment-subtitle {
             margin-top: 20px;
-
             font-size: 11px;
-
             letter-spacing: 3px;
-
             text-transform: uppercase;
-
             opacity: .5;
         }
 
         .photo-grid {
             margin-top: 55px;
-
             display: grid;
-
             gap: 18px;
         }
 
         .photo-two {
             height: 105vw;
-
             max-height: 650px;
         }
 
         .photo-three {
             height: 78vw;
-
             max-height: 500px;
-
             margin-left: 15%;
         }
 
@@ -529,9 +440,7 @@
             font-family: "Playfair Display", serif;
 
             font-style: italic;
-
             font-size: 18px;
-
             opacity: .6;
         }
 
@@ -539,22 +448,16 @@
             margin-top: 12px;
 
             font-size: 8px;
-
             letter-spacing: 3px;
-
             text-transform: uppercase;
-
             opacity: .45;
         }
 
 
-        /* ==============================
-           FINAL PHOTO
-        ============================== */
+        /* FINAL PHOTO */
 
         .final-photo {
             background: #111;
-
             padding-bottom: 100px;
         }
 
@@ -568,23 +471,18 @@
             );
 
             line-height: 1;
-
             margin-top: 20px;
         }
 
         .photo-four {
             height: 125vw;
-
             max-height: 750px;
-
             margin-top: 50px;
         }
 
         .final-quote {
             max-width: 600px;
-
             margin: 45px auto 0;
-
             text-align: center;
 
             font-family: "Playfair Display", serif;
@@ -599,9 +497,7 @@
         }
 
 
-        /* ==============================
-           THANK YOU
-        ============================== */
+        /* THANK YOU */
 
         .thankyou {
             min-height: 80svh;
@@ -609,7 +505,6 @@
             background: #111;
 
             display: flex;
-
             align-items: center;
 
             text-align: center;
@@ -635,11 +530,9 @@
 
         .thankyou-text {
             max-width: 470px;
-
             margin: 35px auto 0;
 
             font-size: 12px;
-
             line-height: 1.9;
 
             opacity: .55;
@@ -649,18 +542,14 @@
             margin-top: 55px;
 
             font-size: 8px;
-
             letter-spacing: 5px;
-
             text-transform: uppercase;
 
             opacity: .4;
         }
 
 
-        /* ==============================
-           FOOTER
-        ============================== */
+        /* FOOTER */
 
         footer {
             padding: 25px 22px;
@@ -668,22 +557,17 @@
             background: #0b0b0b;
 
             display: flex;
-
             justify-content: space-between;
 
             font-size: 7px;
-
             letter-spacing: 2px;
-
             text-transform: uppercase;
 
             opacity: .3;
         }
 
 
-        /* ==============================
-           DESKTOP
-        ============================== */
+        /* DESKTOP */
 
         @media (min-width: 768px) {
 
@@ -709,7 +593,6 @@
 
             .photo-grid {
                 grid-template-columns: 1.2fr .8fr;
-
                 align-items: end;
             }
 
@@ -719,7 +602,6 @@
 
             .photo-three {
                 height: 480px;
-
                 margin-left: 0;
             }
 
@@ -730,9 +612,7 @@
         }
 
 
-        /* ==============================
-           SMALL PHONE
-        ============================== */
+        /* SMALL PHONE */
 
         @media (max-width: 380px) {
 
@@ -1226,7 +1106,6 @@
 
     <script>
 
-
         window.addEventListener(
             "load",
             function () {
@@ -1287,7 +1166,6 @@
 
                 }
             );
-
 
     </script>
 
